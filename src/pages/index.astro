@@ -1,5 +1,5 @@
 ---
-const pageTitle = "Singapore Music Lessons Fee Benchmark 2026";
+const pageTitle = "Singapore Music Lessons Fee Benchmark Directory 2026";
 ---
 
 <!DOCTYPE html>
@@ -8,61 +8,139 @@ const pageTitle = "Singapore Music Lessons Fee Benchmark 2026";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
-  <meta name="description" content="Comprehensive benchmark index detailing private music tuition rates, school package costs, and ABRSM exam fees in Singapore." />
+  <meta name="description" content="Comprehensive benchmark comparison of private music tuition fees, academy rates, and ABRSM exam costs across Singapore." />
+  
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Table",
+    "name": "Singapore Music Lesson Rates Benchmark",
+    "description": "2026 fee matrix for piano, violin, guitar, and vocal lessons in Singapore.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Singapore Music Education Data Hub",
+      "url": "https://www.singaporemusiclessons.com"
+    }
+  }
+  </script>
+
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #1a1a1a; }
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 24px; color: #0f172a; }
+    h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 8px; }
+    h2 { font-size: 1.5rem; color: #1e293b; margin-top: 32px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
     table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
-    th, td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
-    th { background-color: #f8fafc; font-weight: 600; }
-    h1 { font-size: 2rem; color: #0f172a; }
-    .meta-box { background: #f8fafc; border-left: 4px solid #0284c7; padding: 15px; margin: 20px 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 12px; text-align: left; }
+    th { background-color: #f1f5f9; font-weight: 600; }
+    .meta-box { background: #f0f9ff; border-left: 4px solid #0284c7; padding: 16px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0; }
+    .card { border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; background: #fafafa; }
+    .form-box { background: #f8fafc; border: 1px solid #cbd5e1; padding: 24px; border-radius: 8px; margin-top: 40px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
+    .submit-btn { background: #0284c7; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; cursor: pointer; }
   </style>
 </head>
 <body>
-  <header style="margin-bottom: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+  <header style="margin-bottom: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
     <strong>🇸🇬 Singapore Music Education Data Hub</strong>
   </header>
+
   <main>
     <h1>Singapore Music Lessons Fee Benchmark Directory</h1>
+    
     <div class="meta-box">
-      <strong>Key Takeaway:</strong> Private home music lessons in Singapore average <strong>$40 to $120 per hour</strong>, depending on instructor qualification (ATCL/LTCL) and grade level.
+      <strong>Market Summary:</strong> Music lesson fees in Singapore average <strong>$35 to $150 per hour</strong>. Rates vary based on instructor credentials (ATCL, LTCL, FTCL diplomas), class format (home private vs. studio), and grade tier.
     </div>
 
-    <h2>Monthly Music Lesson Rates (4x Weekly Sessions)</h2>
+    <h2>1. Monthly Tuition Rates (4x Weekly Sessions)</h2>
     <table>
       <thead>
         <tr>
           <th>Instrument</th>
-          <th>Format</th>
           <th>Beginner (Monthly)</th>
-          <th>Intermediate (Grades 1–5)</th>
-          <th>Advanced (Grades 6–8)</th>
+          <th>Grades 1–4 (Monthly)</th>
+          <th>Grades 5–8 (Monthly)</th>
+          <th>Diploma Tier</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Piano (Classical)</strong></td>
-          <td>Home Private / School</td>
-          <td>$130 – $190 SGD</td>
-          <td>$160 – $260 SGD</td>
-          <td>$290 – $450+ SGD</td>
+          <td><strong>Classical Piano</strong></td>
+          <td>$140 – $200 SGD</td>
+          <td>$180 – $280 SGD</td>
+          <td>$300 – $480 SGD</td>
+          <td>$550 – $800+ SGD</td>
         </tr>
         <tr>
           <td><strong>Violin</strong></td>
-          <td>Studio / Home Private</td>
-          <td>$165 – $220 SGD</td>
-          <td>$200 – $350 SGD</td>
-          <td>$320 – $480+ SGD</td>
+          <td>$160 – $220 SGD</td>
+          <td>$200 – $320 SGD</td>
+          <td>$340 – $520 SGD</td>
+          <td>$600 – $900 SGD</td>
         </tr>
         <tr>
-          <td><strong>Guitar</strong></td>
-          <td>Private / Small Group</td>
-          <td>$140 – $200 SGD</td>
-          <td>$180 – $260 SGD</td>
-          <td>$280 – $400 SGD</td>
+          <td><strong>Acoustic / Electric Guitar</strong></td>
+          <td>$140 – $190 SGD</td>
+          <td>$170 – $260 SGD</td>
+          <td>$280 – $420 SGD</td>
+          <td>$500 – $700 SGD</td>
+        </tr>
+        <tr>
+          <td><strong>Vocal Coaching</strong></td>
+          <td>$180 – $240 SGD</td>
+          <td>$220 – $350 SGD</td>
+          <td>$360 – $550 SGD</td>
+          <td>$650 – $950 SGD</td>
         </tr>
       </tbody>
     </table>
+
+    <h2>2. Key Music Schools & Academies in Singapore</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Aureus Academy</h3>
+        <p><strong>Locations:</strong> Forum, Orchard, Vivocity, Jurong Point</p>
+        <p>Specializes in 1-on-1 private piano, violin, and vocal lessons with customized scheduling for children and adults.</p>
+      </div>
+      <div class="card">
+        <h3>Yamaha Music School</h3>
+        <p><strong>Locations:</strong> Plaza Singapura, Tampines, Jurong</p>
+        <p>Known for structured Junior Music Course (JMC) group organ/keyboard programs and classical examination prep.</p>
+      </div>
+      <div class="card">
+        <h3>Cristofori Music School</h3>
+        <p><strong>Locations:</strong> Toa Payoh HDB Hub, Bedok, Heartbeat@Bedok</p>
+        <p>Offers accessible, budget-conscious group and private instrument courses across heartland hubs.</p>
+      </div>
+    </div>
+
+    <h2>3. Find a Recommended Music Instructor</h2>
+    <div class="form-box">
+      <p>Need help selecting an accredited music tutor or school matching your location and budget? Request a fee quotation below.</p>
+      <form action="https://formspree.io/f/xbjnqpyz" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Sarah Tan" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email or WhatsApp Number</label>
+          <input type="text" id="email" name="contact" required placeholder="+65 9123 4567 or email@domain.com" />
+        </div>
+        <div class="form-group">
+          <label for="instrument">Instrument</label>
+          <select id="instrument" name="instrument">
+            <option value="piano">Piano</option>
+            <option value="violin">Violin</option>
+            <option value="guitar">Guitar</option>
+            <option value="vocals">Vocals</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Get Fee Recommendations</button>
+      </form>
+    </div>
   </main>
 </body>
 </html>
