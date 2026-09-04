@@ -1,5 +1,6 @@
 ---
-const pageTitle = "Singapore Music Lessons Fee Benchmark Directory 2026";
+const siteName = import.meta.env.PUBLIC_SITE_NAME || "Singapore Data Hub";
+const pageTitle = `${siteName} Fee Benchmark Directory 2026`;
 ---
 
 <!DOCTYPE html>
@@ -8,22 +9,19 @@ const pageTitle = "Singapore Music Lessons Fee Benchmark Directory 2026";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
-  <meta name="description" content="Comprehensive benchmark comparison of private music tuition fees, academy rates, and ABRSM exam costs across Singapore." />
+  <meta name="description" content={`Comprehensive benchmark comparison and rates directory for ${siteName}.`} />
   
   <!-- JSON-LD Schema Markup -->
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Table",
-    "name": "Singapore Music Lesson Rates Benchmark",
-    "description": "2026 fee matrix for piano, violin, guitar, and vocal lessons in Singapore.",
+    "name": `${siteName} Rates Benchmark`,
+    "description": `2026 service fee matrix for ${siteName}.`,
     "publisher": {
       "@type": "Organization",
-      "name": "Singapore Music Education Data Hub",
-      "url": "https://www.singaporemusiclessons.com"
+      "name": `${siteName} Data Hub`
     }
-  }
-  </script>
+  })} />
 
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 24px; color: #0f172a; }
@@ -44,81 +42,74 @@ const pageTitle = "Singapore Music Lessons Fee Benchmark Directory 2026";
 </head>
 <body>
   <header style="margin-bottom: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
-    <strong>🇸🇬 Singapore Music Education Data Hub</strong>
+    <strong>🇸🇬 {siteName} Data Hub</strong>
   </header>
 
   <main>
-    <h1>Singapore Music Lessons Fee Benchmark Directory</h1>
+    <h1>{siteName} Directory</h1>
     
     <div class="meta-box">
-      <strong>Market Summary:</strong> Music lesson fees in Singapore average <strong>$35 to $150 per hour</strong>. Rates vary based on instructor credentials (ATCL, LTCL, FTCL diplomas), class format (home private vs. studio), and grade tier.
+      <strong>Market Summary:</strong> Rates and services directory for <strong>{siteName}</strong>. Rates vary based on credentials, service scope, and locations.
     </div>
 
-    <h2>1. Monthly Tuition Rates (4x Weekly Sessions)</h2>
+    <h2>1. Monthly Rates & Service Benchmark</h2>
     <table>
       <thead>
         <tr>
-          <th>Instrument</th>
-          <th>Beginner (Monthly)</th>
-          <th>Grades 1–4 (Monthly)</th>
-          <th>Grades 5–8 (Monthly)</th>
-          <th>Diploma Tier</th>
+          <th>Category</th>
+          <th>Basic Tier</th>
+          <th>Standard Tier</th>
+          <th>Premium Tier</th>
+          <th>Specialist / Diploma</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Classical Piano</strong></td>
+          <td><strong>Standard Package</strong></td>
           <td>$140 – $200 SGD</td>
           <td>$180 – $280 SGD</td>
           <td>$300 – $480 SGD</td>
           <td>$550 – $800+ SGD</td>
         </tr>
         <tr>
-          <td><strong>Violin</strong></td>
+          <td><strong>Advanced Package</strong></td>
           <td>$160 – $220 SGD</td>
           <td>$200 – $320 SGD</td>
           <td>$340 – $520 SGD</td>
           <td>$600 – $900 SGD</td>
         </tr>
         <tr>
-          <td><strong>Acoustic / Electric Guitar</strong></td>
+          <td><strong>Custom Service</strong></td>
           <td>$140 – $190 SGD</td>
           <td>$170 – $260 SGD</td>
           <td>$280 – $420 SGD</td>
           <td>$500 – $700 SGD</td>
         </tr>
-        <tr>
-          <td><strong>Vocal Coaching</strong></td>
-          <td>$180 – $240 SGD</td>
-          <td>$220 – $350 SGD</td>
-          <td>$360 – $550 SGD</td>
-          <td>$650 – $950 SGD</td>
-        </tr>
       </tbody>
     </table>
 
-    <h2>2. Key Music Schools & Academies in Singapore</h2>
+    <h2>2. Key Providers & Locations</h2>
     <div class="card-grid">
       <div class="card">
-        <h3>Aureus Academy</h3>
-        <p><strong>Locations:</strong> Forum, Orchard, Vivocity, Jurong Point</p>
-        <p>Specializes in 1-on-1 private piano, violin, and vocal lessons with customized scheduling for children and adults.</p>
+        <h3>Central Hub</h3>
+        <p><strong>Locations:</strong> Forum, Orchard, Vivocity</p>
+        <p>Specializes in tailored options with customized scheduling.</p>
       </div>
       <div class="card">
-        <h3>Yamaha Music School</h3>
-        <p><strong>Locations:</strong> Plaza Singapura, Tampines, Jurong</p>
-        <p>Known for structured Junior Music Course (JMC) group organ/keyboard programs and classical examination prep.</p>
+        <h3>East / West Hub</h3>
+        <p><strong>Locations:</strong> Tampines, Jurong, Plaza Singapura</p>
+        <p>Known for structured group programs and consultations.</p>
       </div>
       <div class="card">
-        <h3>Cristofori Music School</h3>
-        <p><strong>Locations:</strong> Toa Payoh HDB Hub, Bedok, Heartbeat@Bedok</p>
-        <p>Offers accessible, budget-conscious group and private instrument courses across heartland hubs.</p>
+        <h3>Heartland Hub</h3>
+        <p><strong>Locations:</strong> Toa Payoh, Bedok, Bishan</p>
+        <p>Offers accessible, budget-conscious packages across heartland hubs.</p>
       </div>
     </div>
 
-    <h2>3. Find a Recommended Music Instructor</h2>
+    <h2>3. Request Information / Quotation</h2>
     <div class="form-box">
-      <p>Need help selecting an accredited music tutor or school matching your location and budget? Request a fee quotation below.</p>
+      <p>Need help selecting an accredited provider matching your location and budget? Request a fee quotation below.</p>
       <form action="https://formspree.io/f/xkjnrzvk" method="POST">
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -129,12 +120,11 @@ const pageTitle = "Singapore Music Lessons Fee Benchmark Directory 2026";
           <input type="text" id="email" name="contact" required placeholder="+65 9123 4567 or email@domain.com" />
         </div>
         <div class="form-group">
-          <label for="instrument">Instrument</label>
-          <select id="instrument" name="instrument">
-            <option value="piano">Piano</option>
-            <option value="violin">Violin</option>
-            <option value="guitar">Guitar</option>
-            <option value="vocals">Vocals</option>
+          <label for="service">Service Category</label>
+          <select id="service" name="service">
+            <option value="basic">Basic Inquiry</option>
+            <option value="standard">Standard Consultation</option>
+            <option value="premium">Premium Support</option>
             <option value="other">Other</option>
           </select>
         </div>
