@@ -1,6 +1,13 @@
 ---
 const siteName = import.meta.env.PUBLIC_SITE_NAME || "Singapore Data Hub";
-const pageTitle = `${siteName} Fee Benchmark Directory 2026`;
+const conversionMode = import.meta.env.PUBLIC_CONVERSION_MODE || "email";
+const pageTitle = `${siteName} Directory & Rates 2026`;
+
+// Dynamic location text based on region
+const isCebu = siteName.toLowerCase().includes("cebu");
+const locationCentral = isCebu ? "Cebu City, IT Park, Ayala Center" : "Orchard, Novena, Marina Bay";
+const locationRegional = isCebu ? "Mandaue, Lapu-Lapu, Talisay" : "Jurong, Tampines, Woodlands";
+const locationHeartland = isCebu ? "Consolacion, Liloan, Minglanilla" : "Bedok, Toa Payoh, Ang Mo Kio";
 ---
 
 <!DOCTYPE html>
@@ -9,20 +16,8 @@ const pageTitle = `${siteName} Fee Benchmark Directory 2026`;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
-  <meta name="description" content={`Comprehensive benchmark comparison and rates directory for ${siteName}.`} />
+  <meta name="description" content={`Official directory, pricing benchmark, and verified listings for ${siteName}.`} />
   
-  <!-- JSON-LD Schema Markup -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Table",
-    "name": `${siteName} Rates Benchmark`,
-    "description": `2026 service fee matrix for ${siteName}.`,
-    "publisher": {
-      "@type": "Organization",
-      "name": `${siteName} Data Hub`
-    }
-  })} />
-
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 24px; color: #0f172a; }
     h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 8px; }
@@ -37,99 +32,99 @@ const pageTitle = `${siteName} Fee Benchmark Directory 2026`;
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
     .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
-    .submit-btn { background: #0284c7; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    .submit-btn { background: #0284c7; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; cursor: pointer; width: 100%; }
+    .whatsapp-btn { background: #25D366; color: white; border: none; padding: 14px 24px; border-radius: 4px; font-weight: 700; cursor: pointer; width: 100%; display: block; text-align: center; text-decoration: none; font-size: 1.1rem; }
   </style>
 </head>
 <body>
   <header style="margin-bottom: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
-    <strong>🇸🇬 {siteName} Data Hub</strong>
+    <strong>📍 {siteName} Official Portal</strong>
   </header>
 
   <main>
-    <h1>{siteName} Directory</h1>
+    <h1>{siteName} Directory & Rates 2026</h1>
     
     <div class="meta-box">
-      <strong>Market Summary:</strong> Rates and services directory for <strong>{siteName}</strong>. Rates vary based on credentials, service scope, and locations.
+      <strong>Market Summary:</strong> Official pricing benchmark and directory for <strong>{siteName}</strong>. Rates and availability vary based on provider credentials, specialized requirements, and service location.
     </div>
 
-    <h2>1. Monthly Rates & Service Benchmark</h2>
+    <h2>1. Estimated Rate Matrix</h2>
     <table>
       <thead>
         <tr>
-          <th>Category</th>
-          <th>Basic Tier</th>
-          <th>Standard Tier</th>
-          <th>Premium Tier</th>
-          <th>Specialist / Diploma</th>
+          <th>Service Tier</th>
+          <th>Basic Option</th>
+          <th>Standard Package</th>
+          <th>Premium / Specialized</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Standard Package</strong></td>
-          <td>$140 – $200 SGD</td>
-          <td>$180 – $280 SGD</td>
-          <td>$300 – $480 SGD</td>
-          <td>$550 – $800+ SGD</td>
+          <td><strong>Hourly / Per Visit Rate</strong></td>
+          <td>Standard Rates</td>
+          <td>Mid-Tier Rates</td>
+          <td>Senior Specialist Rates</td>
         </tr>
         <tr>
-          <td><strong>Advanced Package</strong></td>
-          <td>$160 – $220 SGD</td>
-          <td>$200 – $320 SGD</td>
-          <td>$340 – $520 SGD</td>
-          <td>$600 – $900 SGD</td>
-        </tr>
-        <tr>
-          <td><strong>Custom Service</strong></td>
-          <td>$140 – $190 SGD</td>
-          <td>$170 – $260 SGD</td>
-          <td>$280 – $420 SGD</td>
-          <td>$500 – $700 SGD</td>
+          <td><strong>Full Package / Monthly</strong></td>
+          <td>Entry Plan</td>
+          <td>Recommended Plan</td>
+          <td>Comprehensive Care/Service</td>
         </tr>
       </tbody>
     </table>
 
-    <h2>2. Key Providers & Locations</h2>
+    <h2>2. Regional Service Coverage</h2>
     <div class="card-grid">
       <div class="card">
-        <h3>Central Hub</h3>
-        <p><strong>Locations:</strong> Forum, Orchard, Vivocity</p>
-        <p>Specializes in tailored options with customized scheduling.</p>
+        <h3>Central District</h3>
+        <p><strong>Locations:</strong> {locationCentral}</p>
+        <p>Immediate dispatch and priority consultation for core central hubs.</p>
       </div>
       <div class="card">
-        <h3>East / West Hub</h3>
-        <p><strong>Locations:</strong> Tampines, Jurong, Plaza Singapura</p>
-        <p>Known for structured group programs and consultations.</p>
+        <h3>Regional District</h3>
+        <p><strong>Locations:</strong> {locationRegional}</p>
+        <p>Full suburban coverage with scheduled appointments and consultations.</p>
       </div>
       <div class="card">
-        <h3>Heartland Hub</h3>
-        <p><strong>Locations:</strong> Toa Payoh, Bedok, Bishan</p>
-        <p>Offers accessible, budget-conscious packages across heartland hubs.</p>
+        <h3>Heartland / Outer District</h3>
+        <p><strong>Locations:</strong> {locationHeartland}</p>
+        <p>Accessible, budget-friendly options across local community sectors.</p>
       </div>
     </div>
 
-    <h2>3. Request Information / Quotation</h2>
+    <h2>3. Request Information & Direct Inquiry</h2>
     <div class="form-box">
-      <p>Need help selecting an accredited provider matching your location and budget? Request a fee quotation below.</p>
-      <form action="https://formspree.io/f/xkjnrzvk" method="POST">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required placeholder="e.g. Sarah Tan" />
+      <p>Connect with top-rated providers for <strong>{siteName}</strong> based on your specific requirements and budget.</p>
+
+      {conversionMode === "whatsapp" ? (
+        <div>
+          <a href={`https://wa.me/?text=Hi%2C%20I%20am%20inquiring%20about%20services%20on%20${encodeURIComponent(siteName)}`} class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+            💬 Chat via WhatsApp Now
+          </a>
         </div>
-        <div class="form-group">
-          <label for="email">Email or WhatsApp Number</label>
-          <input type="text" id="email" name="contact" required placeholder="+65 9123 4567 or email@domain.com" />
-        </div>
-        <div class="form-group">
-          <label for="service">Service Category</label>
-          <select id="service" name="service">
-            <option value="basic">Basic Inquiry</option>
-            <option value="standard">Standard Consultation</option>
-            <option value="premium">Premium Support</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <button type="submit" class="submit-btn">Get Fee Recommendations</button>
-      </form>
+      ) : (
+        <form action="https://formspree.io/f/xkjnrzvk" method="POST">
+          <input type="hidden" name="site_origin" value={siteName} />
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Sarah Tan" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email or Contact Number</label>
+            <input type="text" id="email" name="contact" required placeholder="+65 9123 4567 or email@domain.com" />
+          </div>
+          <div class="form-group">
+            <label for="service">Inquiry Scope</label>
+            <select id="service" name="service">
+              <option value="rate_quote">Request Rate Quotation</option>
+              <option value="availability">Check Provider Availability</option>
+              <option value="general">General Support</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Submit Request for {siteName}</button>
+        </form>
+      )}
     </div>
   </main>
 </body>
