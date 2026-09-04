@@ -1,3 +1,5 @@
+export const prerender = true;
+
 export async function GET() {
   const siteUrl = process.env.PUBLIC_SITE_URL || 'https://singaporemusiclessons.com';
   
