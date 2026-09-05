@@ -137,7 +137,25 @@ if (siteLower.includes("beauty clinic")) {
     .form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
     .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
     .submit-btn { background: #0284c7; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; cursor: pointer; width: 100%; }
-    .whatsapp-btn { background: #25D366; color: white; border: none; padding: 14px 24px; border-radius: 4px; font-weight: 700; cursor: pointer; width: 100%; display: block; text-align: center; text-decoration: none; font-size: 1.1rem; }
+    
+    /* Disabled/Greyed-Out WhatsApp Button Style */
+    .whatsapp-btn-disabled { 
+      background: #94a3b8; 
+      color: #f1f5f9; 
+      border: none; 
+      padding: 12px 24px; 
+      border-radius: 4px; 
+      font-weight: 600; 
+      width: 100%; 
+      display: block; 
+      text-align: center; 
+      text-decoration: none; 
+      font-size: 1rem; 
+      cursor: not-allowed; 
+      opacity: 0.7;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
@@ -192,34 +210,37 @@ if (siteLower.includes("beauty clinic")) {
     <div class="form-box">
       <p>Connect with accredited providers matching your budget and location requirements for <strong>{siteName}</strong>.</p>
 
-      {conversionMode === "whatsapp" ? (
-        <div>
-          <a href={`https://wa.me/?text=Hi%2C%20I%20am%20inquiring%20about%20services%20on%20${encodeURIComponent(siteName)}`} class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-            💬 Chat via WhatsApp Now
-          </a>
+      <!-- Greyed-out WhatsApp Indicator -->
+      <div class="whatsapp-btn-disabled" title="WhatsApp support is temporarily offline for updates">
+        💬 WhatsApp Support Temporarily Offline
+      </div>
+
+      <!-- Active Formspree Email Inquiry Form -->
+      <form action="https://formspree.io/f/xkjnrzvk" method="POST">
+        <input type="hidden" name="_subject" value={`New Inquiry from ${siteName}`} />
+        <input type="hidden" name="site_origin" value={siteName} />
+        
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Sarah Tan" />
         </div>
-      ) : (
-        <form action="https://formspree.io/f/xkjnrzvk" method="POST">
-          <input type="hidden" name="site_origin" value={siteName} />
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required placeholder="e.g. Sarah Tan" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email or Contact Number</label>
-            <input type="text" id="email" name="contact" required placeholder="+65 9123 4567 or email@domain.com" />
-          </div>
-          <div class="form-group">
-            <label for="service">Inquiry Scope</label>
-            <select id="service" name="service">
-              <option value="rate_quote">Request Rate Quotation</option>
-              <option value="availability">Check Provider Availability</option>
-              <option value="general">General Support</option>
-            </select>
-          </div>
-          <button type="submit" class="submit-btn">Submit Request for {siteName}</button>
-        </form>
-      )}
+        
+        <div class="form-group">
+          <label for="email">Email or Contact Number</label>
+          <input type="text" id="email" name="contact" required placeholder="+65 9123 4567 or email@domain.com" />
+        </div>
+        
+        <div class="form-group">
+          <label for="service">Inquiry Scope</label>
+          <select id="service" name="service">
+            <option value="rate_quote">Request Rate Quotation</option>
+            <option value="availability">Check Provider Availability</option>
+            <option value="general">General Support</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit Request for {siteName}</button>
+      </form>
     </div>
   </main>
 </body>
